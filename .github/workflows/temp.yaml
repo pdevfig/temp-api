@@ -1,9 +1,21 @@
 name: temp-github-actions
 
-on: [push, pull_request]
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches:
+      - main
+    types: 
+      - opened
+      - synchronize
+      - reopened
+      - labeled
 
 jobs:
   temp-job:
+    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'preview')
     runs-on: ubuntu-latest
     steps:
       - name: say hello
