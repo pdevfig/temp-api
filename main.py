@@ -23,4 +23,4 @@ def getDateTime():
 
 @app.get("hello")
 def hello():
-    return ("message": "Hello there!")
+    return {"message": "Hello there!"}
