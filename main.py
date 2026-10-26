@@ -24,3 +24,7 @@ def getDateTime():
 @app.get("hello")
 def hello():
     return {"message": "Hello there!"}
+
+@app.get("time")
+def time():
+    return {"ServerTime": datetime.now()}
