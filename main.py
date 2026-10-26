@@ -20,3 +20,7 @@ app.add_middleware(
 @app.get("/getDateTime")
 def getDateTime():
     return {"message": datetime.now()}
+
+@app.get("hello")
+def hello():
+    return ("message": "Hello there!")
