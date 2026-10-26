@@ -15,7 +15,7 @@ on:
 
 jobs:
   temp-job:
-    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'preview')
+    if: contains(github.event.pull_request.labels.*.name, 'preview')
     runs-on: ubuntu-latest
     steps:
       - name: say hello
