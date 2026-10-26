@@ -20,3 +20,9 @@ jobs:
     steps:
       - name: say hello
         run: echo "Say Hello"
+  temp-job2: 
+    needs: ["temp-job"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello again
+        run: echo "Hello again for github actions"
