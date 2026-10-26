@@ -1,0 +1,10 @@
+name: temp-github-actions
+
+on: [push, pull_request]
+
+jobs:
+  temp-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        run: echo "Say Hello"
