@@ -1,0 +1,28 @@
+name: temp-github-actions
+
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    branches:
+      - main
+    types: 
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+
+jobs:
+  temp-job:
+    if: contains(github.event.pull_request.labels.*.name, 'preview')
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        run: echo "Say Hello"
+  temp-job2: 
+    needs: ["temp-job"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello again
+        run: echo "Hello again for github actions"
